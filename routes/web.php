@@ -22,6 +22,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('admin', [homeController::class, 'index'])->name('home');
+Route::get('admin', [homeController::class, 'index'])->name('admin.home');
 
-Route::resource('admin/files', fileController::class);
+Route::resource('admin/files', fileController::class)->names('admin.files');

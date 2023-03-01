@@ -30,7 +30,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a href="{{route('admin.home')}}" class="nav-link {{request()->routeIs('admin.home') ? 'active':''}}">Dashboard</a>
+                        </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle {{request()->routeIs('admin.files.*') ? 'active':''}}" href="#" id="navbarDropdown-imagenes " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Imagenes
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown-imagenes ">
+                              <li><a class="dropdown-item {{request()->routeIs('admin.files.index') ? 'active':''}}" href="{{route('admin.files.index')}}">Ver imagenes</a></li>
+                              <li><a class="dropdown-item {{request()->routeIs('admin.files.create') ? 'active':''}}" href="{{route('admin.files.create')}}">Crear imagenes</a></li>
+                              
+                            </ul>
+                          </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
