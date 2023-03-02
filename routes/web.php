@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\fileController;
 use App\Http\Controllers\Admin\homeController;
+use App\Http\Controllers\AjaxUploadController;
 use App\Http\Controllers\photosController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Auth::routes();
 Route::get('admin', [homeController::class, 'index'])->name('admin.home');
 
 Route::resource('admin/files', fileController::class)->names('admin.files');
+
+Route::get('image-preview', [AjaxUploadController::class, 'index']);
+Route::post('upload', [AjaxUploadController::class, 'store']);
